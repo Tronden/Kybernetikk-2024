@@ -232,24 +232,22 @@ for idx, (accel_file, force_file, orientation_file, label) in enumerate(test_con
 
     print(f"Data saved for {label}:\n  - Adjusted signals: {adjusted_signals_file}\n  - State vector: {state_vector_file}\n  - Contact wrench: {contact_wrench_file}")
 
-    # Plot for force
+    # Plot force data
     plt.subplot(3, 2, idx * 2 + 1)
-    plt.plot(times, F3, label='Measured Force F3', color='blue')
-    plt.plot(times, x6, label='Estimated Force X6', color='orange')
-    plt.plot(times, zc3, label='Contact Force Zc3', color='green')
-    plt.title(f'{label} - Force')
-    plt.xlabel('Time (s)')
-    plt.ylabel('Force (N)')
+    plt.plot(times, F3, label=r'$F_3$', color='blue')
+    plt.plot(times, x6, label=r'$\hat{X}_6$', color='orange')
+    plt.plot(times, zc3, label=r'$\hat{Z}_{c,3}$', color='green')
+    plt.xlabel('Time')
+    plt.ylabel('Force')
     plt.legend()
 
-    # Plot for torque
+    # Plot torque data
     plt.subplot(3, 2, idx * 2 + 2)
-    plt.plot(times, T2, label='Measured Torque T2', color='blue')
-    plt.plot(times, x8, label='Estimated Torque X8', color='orange')
-    plt.plot(times, zc5, label='Contact Torque Zc5', color='green')
-    plt.title(f'{label} - Torque')
-    plt.xlabel('Time (s)')
-    plt.ylabel('Torque (Nm)')
+    plt.plot(times, T2, label=r'$T_2$', color='blue')
+    plt.plot(times, x8, label=r'$\hat{X}_8$', color='orange')
+    plt.plot(times, zc5, label=r'$\hat{Z}_{c,5}$', color='green')
+    plt.xlabel('Time')
+    plt.ylabel('Torque')
     plt.legend()
 
 plt.subplots_adjust(top=0.962,bottom=0.06,left=0.045,right=0.992,hspace=0.337,wspace=0.1)

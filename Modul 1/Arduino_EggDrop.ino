@@ -10,9 +10,9 @@ volatile int posi = 0; // Position variable
 long prevT = 0;
 
 // PID constants for initial test
-float kp = 75;
-float ki = 3.75;  
-float kd = 2.5;
+float kp = 20;
+float ki = 7;  
+float kd = 4;
 
 // PID variables
 float integral = 0;
