@@ -6,8 +6,9 @@ from Estimation import Estimation
 import Kalmanfilter as kf
 
 # Define the base data folder
-data_folder = './Data'
-output_folder = './Output'
+script_dir = os.path.dirname(os.path.abspath(__file__))
+data_folder = os.path.join(script_dir,'Data')
+output_folder = os.path.join(script_dir,'./Output')
 os.makedirs(output_folder, exist_ok=True)  # Ensure Output folder exists
 
 # Initialize estimation object with all necessary files
